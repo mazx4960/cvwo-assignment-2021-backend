@@ -61,7 +61,7 @@ func CreateTag(c *gin.Context) {
 
 	tag.UserID = userId.(uint)
 	database.DB.Create(&tag)
-	c.JSON(http.StatusOK, gin.H{"tag": tag})
+	c.JSON(http.StatusOK, tag)
 }
 
 func DeleteTag(c *gin.Context) {
