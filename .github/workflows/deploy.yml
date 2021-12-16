@@ -26,10 +26,10 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
       
-      - name: Set up Cloud SDK
-      uses: google-github-actions/setup-gcloud@v0.3.0
+      - id: 'setup'
+        uses: google-github-actions/setup-gcloud@v0.3.0
 
-      - name: Install go components
+      - id: 'install go'
         run: gcloud components install app-engine-go
 
       # Deploy to google app engine
