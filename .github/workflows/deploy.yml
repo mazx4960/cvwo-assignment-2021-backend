@@ -17,16 +17,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-        uses: actions/checkout@v2
-    - id: 'auth'
-      uses: 'google-github-actions/auth@v0'
-      with:
-        credentials_json: '${{ secrets.GCP_SA_KEY }}'
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    - id: 'deploy'
-      uses: 'google-github-actions/deploy-appengine@v0.5.0'
-    
-    # Example of using the output
-    - id: 'test'
-      run: 'curl "${{ steps.deploy.outputs.url }}"'
+      # Authenticate with google
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+      # Deploy to google app engine
+      - id: 'deploy'
+        uses: 'google-github-actions/deploy-appengine@v0.5.0'
+      
+      # Example of using the output
+      - id: 'test'
+        run: 'curl "${{ steps.deploy.outputs.url }}"'
