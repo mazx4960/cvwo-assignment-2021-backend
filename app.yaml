@@ -1,1 +1,9 @@
 runtime: go115
+
+env_variables:
+  SECRET_KEY:   'secret'
+  DB_HOST:      'cvwo-assignment:us-central1:cvwo-postgres'
+  DB_USER:      'cvwo'
+  DB_PASSWORD:  'Q^7#bjaQL35z'
+  DB_NAME:      'cvwo'
+  DB_PORT:      '5432'

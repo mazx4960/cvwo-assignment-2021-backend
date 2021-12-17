@@ -12,10 +12,13 @@ import (
 var router *gin.Engine
 
 func main() {
-	err := godotenv.Load()
-  if err != nil {
-    log.Fatal("Error loading .env file")
-  }
+	if len(os.Args) > 1 && os.Args[1] == "--development" {
+		err := godotenv.Load()
+		if err != nil {
+			log.Fatal("Error loading .env file")
+		}
+		log.Println("development mode")
+	}
 
 	database.Connect()
 	if len(os.Args) > 1 {
