@@ -1,0 +1,34 @@
+type Task {
+  id: ID!
+  user: User!
+  name: String!
+  description: String!
+  deadline: String!
+  status: String!
+  color: String!
+  createdAt: String! 
+  updatedAt: String!
+  tags: [Tag]
+  lists: [List]
+}
+
+extend type Query {
+  getTask(id: ID): Task
+  getTaskByUser(userID: ID): [Task]
+}
+
+input NewTask {
+  name: String!
+  description: String!
+  deadline: String!
+  status: String!
+  color: String!
+  tagIDs: [ID]
+  listIDs: [ID]
+}
+
+extend type Mutation {
+  createTask(input: NewTask!): Task
+  updateTask(input: NewTask!): Task
+  deleteTask(id: ID!): Boolean
+}

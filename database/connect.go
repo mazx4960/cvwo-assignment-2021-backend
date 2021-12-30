@@ -12,14 +12,19 @@ import (
 
 var DB *gorm.DB
 
-func Connect() {
-	dbinfo := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable", os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_NAME"), os.Getenv("DB_PORT"))
-	// connection, err := gorm.Open(postgres.Open(dbinfo), &gorm.Config{})
+func Connect(mode string) {
+	dbinfo := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s", os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_NAME"), os.Getenv("DB_PORT"))
 
-	connection, err := gorm.Open(postgres.New(postgres.Config{
-		DriverName: "cloudsqlpostgres",
-		DSN:        dbinfo,
-	}))
+	var connection *gorm.DB
+	var err error
+	if mode == "production" {
+		connection, err = gorm.Open(postgres.New(postgres.Config{
+			DriverName: "cloudsqlpostgres",
+			DSN:        dbinfo + " sslmode=disable",
+		}))
+	} else {
+		connection, err = gorm.Open(postgres.Open(dbinfo), &gorm.Config{})
+	}
 
 	if err != nil {
 		panic("could not connect to the database")

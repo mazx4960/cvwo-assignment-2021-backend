@@ -1,0 +1,25 @@
+type Tag {
+  id: ID!
+  user: User!
+  name: String!
+  description: String!
+  color: String!
+}
+
+extend type Query {
+  getTag(id: ID): Tag
+  getTagByUser(userID: ID): [Tag]
+  getTaskByTag(tagID: ID): [Task]
+}
+
+input NewTag {
+  name: String!
+  description: String!
+  color: String!
+}
+
+extend type Mutation {
+  createTag(input: NewTag!): Tag
+  updateTag(input: NewTag!): Tag
+  deleteTag(id: ID!): Boolean
+}

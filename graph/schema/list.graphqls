@@ -1,0 +1,27 @@
+type List {
+  id: ID!
+  user: User!
+  name: String!
+  description: String!
+  color: String!
+  tasks: [Task]
+}
+
+extend type Query {
+  getList(id: ID): List
+  getListByUser(userID: ID): [List]
+  getTaskByList(listID: ID): [Task]
+}
+
+input NewList {
+  id: ID!
+  name: String!
+  description: String!
+  color: String!
+}
+
+extend type Mutation {
+  createList(input: NewList): List
+  updateList(input: NewList): List
+  deleteList(id: ID!): List
+}
