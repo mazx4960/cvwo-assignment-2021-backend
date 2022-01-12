@@ -6,7 +6,7 @@ require (
 	github.com/99designs/gqlgen v0.14.0
 	github.com/gin-gonic/gin v1.7.7
 	github.com/vektah/gqlparser/v2 v2.2.0
-	gorm.io/gorm v1.22.4
+	gorm.io/gorm v1.22.5
 )
 
 require (
@@ -25,7 +25,7 @@ require (
 	github.com/jackc/pgtype v1.9.1 // indirect
 	github.com/jackc/pgx/v4 v4.14.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
-	github.com/jinzhu/now v1.1.3 // indirect
+	github.com/jinzhu/now v1.1.4 // indirect
 	github.com/lib/pq v1.10.4 // indirect
 	github.com/mitchellh/mapstructure v0.0.0-20180203102830-a4e142e9c047 // indirect
 	go.opencensus.io v0.23.0 // indirect
