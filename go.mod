@@ -3,7 +3,7 @@ module main
 go 1.17
 
 require (
-	github.com/99designs/gqlgen v0.14.0
+	github.com/99designs/gqlgen v0.15.0
 	github.com/gin-gonic/gin v1.7.7
 	github.com/vektah/gqlparser/v2 v2.2.0
 	gorm.io/gorm v1.22.5
@@ -27,7 +27,7 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.4 // indirect
 	github.com/lib/pq v1.10.4 // indirect
-	github.com/mitchellh/mapstructure v0.0.0-20180203102830-a4e142e9c047 // indirect
+	github.com/mitchellh/mapstructure v1.2.3 // indirect
 	go.opencensus.io v0.23.0 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
