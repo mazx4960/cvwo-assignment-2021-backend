@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/99designs/gqlgen v0.16.0
 	github.com/gin-gonic/gin v1.7.7
-	github.com/vektah/gqlparser/v2 v2.2.0
+	github.com/vektah/gqlparser/v2 v2.3.0
 	gorm.io/gorm v1.22.5
 )
 
