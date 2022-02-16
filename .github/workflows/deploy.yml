@@ -27,7 +27,7 @@ jobs:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
       
       - id: 'setup'
-        uses: google-github-actions/setup-gcloud@v0.4.0
+        uses: google-github-actions/setup-gcloud@v0.5.1
 
       - id: 'install-go'
         run: gcloud components install app-engine-go
