@@ -6,7 +6,7 @@ require (
 	github.com/99designs/gqlgen v0.16.0
 	github.com/gin-gonic/gin v1.7.7
 	github.com/vektah/gqlparser/v2 v2.3.1
-	gorm.io/gorm v1.22.5
+	gorm.io/gorm v1.23.1
 )
 
 require (
@@ -61,5 +61,5 @@ require (
 	golang.org/x/crypto v0.0.0-20220126234351-aa10faf2a1f8
 	golang.org/x/sys v0.0.0-20211216021012-1d35b9e2eb4e // indirect
 	gopkg.in/yaml.v2 v2.2.8 // indirect
-	gorm.io/driver/postgres v1.2.3
+	gorm.io/driver/postgres v1.3.1
 )
